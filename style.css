@@ -1,0 +1,44 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: Nunito, sans-serif;
+	color: white;
+	background-color: rgb(36, 36, 36);
+}
+
+body {
+	margin-left: 20px;
+}
+
+h1 {
+	color: rgb(255, 173, 65);
+}
+
+i {
+	color: rgb(255, 31, 15);
+	text-shadow: 1px 1px 1px rgba(175, 153, 52, 0.6);
+}
+
+.instructions-container {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.instructions-container .instructions {
+	margin: 2px;
+	font-size: 1.1rem;
+}
+
+.submit-container {
+	margin-top: 20px;
+}
+
+input {
+	font-size: 1rem;
+}
+
+label {
+	font-size: 1.1rem;
+}

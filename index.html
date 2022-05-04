@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rock, Paper, Scissors!</title>
+		<link rel="stylesheet" href="./style.css" />
+		<script src="./scripts.js" defer></script>
+		<link rel="icon" type="image/png" href="./rock-paper-scissors.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/935b5672af.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+
+	<body>
+		<div class="form">
+			<h1 style="font-size: 28px;">
+				<i class="fa-solid fa-hand-fist"></i> Rock,
+				<i class="fa-solid fa-hand"></i> Paper,
+				<i class="fa-solid fa-hand-scissors"></i> Scissors !
+			</h1>
+			<div class="instructions-container">
+				<p class="instructions">
+					Before start, open the browser console pressing:
+				</p>
+				<ul>
+					<li><b>Shift+Ctrl+J.</b> on Chrome / Edge</li>
+					<li><b>F12</b> on Firefox.</li>
+				</ul>
+
+				<p class="instructions">
+					After submitting your choice, you can change it for the next round.
+				</p>
+				<p class="instructions">
+					You'll play against the machine. The winner of the game will be the
+					best of 5 rounds.
+				</p>
+				<p class="instructions">Good luck!</p>
+			</div>
+			<div class="submit-container">
+				<label for="choiceField">Enter your choice: </label>
+				<input
+					type="text"
+					id="choiceField"
+					class="choiceField"
+					placeholder="rock / paper / scissors"
+				/>
+				<input
+					type="submit"
+					value="Play"
+					class="choiceSubmit"
+					id="submit"
+					onclick="playerPlay()"
+				/>
+			</div>
+		</div>
+		<div class="counter-container">
+			<p style="visibility: hidden;" class="counter" id="roundCounter"></p>
+			<p
+				style="visibility: hidden;"
+				class="counter"
+				id="playerScoreCounter"
+			></p>
+			<p
+				style="visibility: hidden;"
+				class="counter"
+				id="computerScoreCounter"
+			></p>
+		</div>
+	</body>
+</html>
