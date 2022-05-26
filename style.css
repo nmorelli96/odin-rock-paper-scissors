@@ -10,13 +10,18 @@ html {
 
 body {
 	margin-left: 20px;
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
 }
 
 h1 {
 	color: rgb(255, 173, 65);
 }
 
-i {
+h1>i {
 	color: rgb(255, 31, 15);
 	text-shadow: 1px 1px 1px rgba(175, 153, 52, 0.6);
 }
@@ -24,6 +29,7 @@ i {
 .instructions-container {
 	display: flex;
 	flex-flow: column nowrap;
+	
 }
 
 .instructions-container .instructions {
@@ -35,10 +41,72 @@ i {
 	margin-top: 20px;
 }
 
-input {
+button {
+	font-family: Nunito;
 	font-size: 1rem;
+	margin: 2px;
+	margin-top: 10px;
+	color: pink;
+	background-color: rgb(36, 36, 36);
+	border-radius: 10px;
+	padding: 10px;
 }
 
-label {
-	font-size: 1.1rem;
+#results {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	margin-top: 20px;
+	gap: 15px;
+}
+
+#results p {
+	margin: 0;
+}
+
+#scores {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 10px;
+	gap: 10px;
+	text-align: left;
+	min-width: 200px;
+}
+
+#rounds {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 10px;
+	gap: 10px;
+	text-align: left;
+	min-width: 200px;
+}
+
+.showWinner {
+	z-index: 2;
+	box-shadow: 3px 3px 3px black;
+	background-color: rgb(30, 30, 30);
+	position: absolute;
+	top: 40vh;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	border-radius: 15px;
+}
+
+.overlay {
+	/*display: none;*/
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.7;
+	z-index: 1;
+}
+
+.inactive {
+	display: none;
 }
