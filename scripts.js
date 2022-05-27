@@ -25,13 +25,14 @@ const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
 
+const computerIcon = document.getElementById('computerIcon');
+
 const showWinner = document.getElementById('showWinner');
 const showWinnerPara = document.getElementById('showWinnerPara')
 const replay = document.getElementById('replay-btn');
 const overlay = document.getElementById('overlay');
 
 const restartGame = document.getElementById('replay-btn');
-console.log(restartGame);
 restartGame.addEventListener('click', (event) => {
 	restart();
 })
@@ -43,14 +44,23 @@ restartGame.addEventListener('click', (event) => {
 let submitRock = document.getElementsByClassName('choiceBtn')[0];
 submitRock.addEventListener('click', (event) => {
 	game('Rock');
+	submitScissors.classList.remove('selected');
+	submitPaper.classList.remove('selected');
+	submitRock.classList.add('selected');
 });
 let submitPaper = document.getElementsByClassName('choiceBtn')[1];
 submitPaper.addEventListener('click', (event) => {
 	game('Paper');
+	submitRock.classList.remove('selected');
+	submitScissors.classList.remove('selected');
+	submitPaper.classList.add('selected');
 });
 let submitScissors = document.getElementsByClassName('choiceBtn')[2];
 submitScissors.addEventListener('click', (event) => {
 	game('Scissors');
+	submitRock.classList.remove('selected');
+	submitPaper.classList.remove('selected');
+	submitScissors.classList.add('selected');
 });
 // execute game function when clicking an option
 
@@ -60,10 +70,8 @@ function restart() {
 	rounds = 0;
 	playerScore = 0;
 	computerScore = 0;
-	overlay.classList.remove('overlay');
-	overlay.classList.add('inactive');
-	showWinner.classList.remove('showWinner');
-	showWinner.classList.add('inactive');
+	overlay.classList.replace('overlay', 'inactive');
+	showWinner.classList.replace('showWinner', 'inactive');
 }
 
 function game(play) {
@@ -71,17 +79,13 @@ function game(play) {
 
 	if (playerScore === 3 || computerScore === 3) {
 		if (playerScore > computerScore) {
-			showWinner.classList.remove('inactive');
-			showWinner.classList.add('showWinner');
-			overlay.classList.remove('inactive');
-			overlay.classList.add('overlay');
+			showWinner.classList.replace('inactive', 'showWinner');
+			overlay.classList.replace('inactive', 'overlay');
 			showWinnerPara.innerHTML = 'You won the game! Well done!';
 			;
 		} else {
-			showWinner.classList.remove('inactive');
-			showWinner.classList.add('showWinner');
-			overlay.classList.remove('inactive');
-			overlay.classList.add('overlay');
+			showWinner.classList.replace('inactive', 'showWinner');
+			overlay.classList.replace('inactive', 'overlay');
 			showWinnerPara.innerHTML = 'You lost the game :( Better luck next time';
 		};
 	}
@@ -101,39 +105,45 @@ function playRound(play) {
 		rounds++
 	}
 	roundPara.classList.add('round-p');
-	roundPara.textContent = ('Round: ' + rounds);
+	roundPara.innerHTML = ('Round: ' + rounds);
 	scoreContainer.appendChild(roundPara);
 
 	scorePara.classList.add('score-p');
 	scorePara.textContent = ('Player ' + playerScore + ' - ' + computerScore + ' Computer');
 	scoreContainer.appendChild(scorePara);
 
-	playerChoicePara.classList.add('player-choice-p');
-	playerChoicePara.textContent = ('You chose: ' + playerSelection);
-	roundContainer.appendChild(playerChoicePara);
+	//playerChoicePara.classList.add('player-choice-p');
+	//playerChoicePara.textContent = ('You chose: ' + playerSelection);
+	//roundContainer.appendChild(playerChoicePara);
 
-	computerScorePara.classList.add('pc-choice-p');
-	computerScorePara.textContent = ('PC chose: ' + computerSelection);
-	roundContainer.appendChild(computerScorePara);
+	//computerScorePara.classList.add('pc-choice-p');
+	//computerScorePara.textContent = ('PC chose: ' + computerSelection);
+	//roundContainer.appendChild(computerScorePara);
 
 	roundWinnerPara.classList.add('round-winner-p');
 	roundWinnerPara.textContent = (winner);
-	roundContainer.appendChild(roundWinnerPara);
-
+	roundContainer.appendChild(roundWinnerPara);	
 }
 
 function computerPlay() {
 	return choices[Math.floor(Math.random() * choices.length)]; //returns the computer choice based on random number
 }
 
-/*
-function playerPlay(playerChoice) {
-	console.log(playerChoice)	
-	return playerChoice;
-}
-*/
-
 function checkWinner(playerSelection, computerSelection) {
+
+	if(computerSelection === 'Rock'){
+		computerIcon.classList.remove('fa-question', 'fa-hand', 'fa-hand-scissors');
+		computerIcon.classList.add('fa-hand-fist');
+	}
+	else if(computerSelection === 'Paper'){
+		computerIcon.classList.remove('fa-question', 'fa-hand-fist', 'fa-hand-scissors');
+		computerIcon.classList.add('fa-hand');
+	}
+	else if(computerSelection === 'Scissors'){
+		computerIcon.classList.remove('fa-question', 'fa-hand-fist', 'fa-paper');
+		computerIcon.classList.add('fa-hand-scissors');
+	}
+
 	if (
 		(playerSelection === 'Paper' && computerSelection === 'Rock') ||
 		(playerSelection === 'Rock' && computerSelection === 'Scissors') ||

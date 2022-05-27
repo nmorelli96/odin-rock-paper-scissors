@@ -13,31 +13,43 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800;900&display=swap"
 		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet"> 
 	<script src="https://kit.fontawesome.com/935b5672af.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="body">
-	<div class="form">
-		<h1 style="font-size: 28px;">
-			<i class="fa-solid fa-hand-fist"></i> Rock,
-			<i class="fa-solid fa-hand"></i> Paper,
-			<i class="fa-solid fa-hand-scissors"></i> Scissors !
+	<header class="header">
+		<h1>
+			Rock, Paper, Scissors !
 		</h1>
+	</header>
+	<div class="form">
+
 		<div class="instructions-container">
 
 			<p class="instructions">
 				You'll play against the machine. <br> The winner of the game will be the
-				best of 5. <br>If a round results in a tie, another one will be played.
+				best of 5.
 			</p>
 			<p class="instructions">Good luck!</p>
 		</div>
 		<div class="submit-container">
-			<button class="choiceBtn" id="rockBtn" value="rock"><i class="fa-solid fa-6x fa-hand-fist"></i>
-			</button>
-			<button class="choiceBtn" id="paperBtn" value="paper"><i class="fa-solid fa-6x fa-hand"></i>
-			</button>
-			<button class="choiceBtn" id="scissorsBtn" value="scissors"><i class="fa-solid fa-6x fa-hand-scissors"></i>
-			</button>
+			<div class="choice-buttons">
+				<button class="choiceBtn" id="rockBtn" value="rock"><i class="fa-solid fa-5x fa-hand-fist"></i>
+				</button>
+				<button class="choiceBtn" id="paperBtn" value="paper"><i class="fa-solid fa-5x fa-hand"></i>
+				</button>
+				<button class="choiceBtn" id="scissorsBtn" value="scissors"><i class="fa-solid fa-5x fa-hand-scissors"></i>
+				</button>
+			</div>
+			<div class="computer-play">
+				<i id="robot" class="fa-solid fa-5x fa-robot"></i>
+				<div class="false-btn">
+					<i id="computerIcon" class="fa-solid fa-5x fa-question"></i>
+				</div>
+			</div>
 		</div>
 
 		<div class="results-container" id="results">
@@ -45,12 +57,11 @@
 			<div class="round-container" id="rounds"></div>
 		</div>
 
-
 	</div>
 	<div class="counter-container">
-		<p style="visibility: hidden;" class="counter" id="roundCounter"></p>
-		<p style="visibility: hidden;" class="counter" id="playerScoreCounter"></p>
-		<p style="visibility: hidden;" class="counter" id="computerScoreCounter"></p>
+		<p class="counter" id="roundCounter"></p>
+		<p class="counter" id="playerScoreCounter"></p>
+		<p class="counter" id="computerScoreCounter"></p>
 	</div>
 
 	<div class="inactive" id="overlay"></div>

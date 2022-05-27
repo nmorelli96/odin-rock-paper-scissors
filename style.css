@@ -3,22 +3,35 @@
 }
 
 html {
-	font-family: Nunito, sans-serif;
-	color: white;
-	background-color: rgb(36, 36, 36);
+	font-family: 'Nunito', sans-serif;
+	color: #fcdcb2;
+	font-weight: 500;
 }
 
 body {
-	margin-left: 20px;
+	background-color: rgb(31, 28, 27);
 	z-index: 0;
 	display: flex;
+	flex-flow: column nowrap;
 	justify-content: center;
 	text-align: center;
 	align-items: center;
+	margin: 0;
+}
+
+header {
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+	background-color: rgb(56, 44, 4);
 }
 
 h1 {
 	color: rgb(255, 173, 65);
+	font-family: 'Press Start 2P', sans-serif;
+	font-size: 30px;
+	margin: 25px;
+	text-shadow: 2px 2px 2px rgba(247, 169, 0, 0.4);
 }
 
 h1>i {
@@ -34,22 +47,66 @@ h1>i {
 
 .instructions-container .instructions {
 	margin: 2px;
-	font-size: 1.1rem;
+	font-size: 0.9rem;
+	font-family: 'Press Start 2P', sans-serif
 }
 
 .submit-container {
-	margin-top: 20px;
+	margin: 10px;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
 }
+
+.choice-buttons{
+	margin-bottom: 20px;
+}
+
+.computer-play{
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 15px;
+}
+
+#robot{
+	padding-top: 10px;;
+	color:rgb(101, 196, 255);
+}
+
 
 button {
 	font-family: Nunito;
 	font-size: 1rem;
-	margin: 2px;
+	margin: 5px;
 	margin-top: 10px;
-	color: pink;
+	color: rgb(255, 190, 190);
 	background-color: rgb(36, 36, 36);
 	border-radius: 10px;
-	padding: 10px;
+	border-color: lightgrey;
+	padding: 8px;
+}
+
+.choiceBtn {
+	width: 110px;
+	height: 110px;
+}
+
+.selected {
+	transform: scale(1.15);
+	border-color: rgb(255, 173, 65);
+	box-shadow: 0px 0px 0.7rem rgb(255, 173, 65);
+	transition: all 0.2s ease-out;
+}
+
+.false-btn {
+	border: 2px solid lightgrey;
+	border-radius: 10px;
+	padding: 6px;
+	padding-top: 12px;
+	width: 110px;
+	height: 110px;
+	color:rgb(255, 173, 65);
+	text-shadow: 0 0 0.25rem rgb(255, 0, 0);
 }
 
 #results {
@@ -109,4 +166,27 @@ button {
 
 .inactive {
 	display: none;
+}
+
+.round-p, .score-p, .round-winner-p{
+	font-family: 'Press Start 2P', sans-serif;
+	text-align: center;
+}
+
+/*#playerScoreCounter{
+	font-family: 'Press Start 2P', sans-serif;
+}
+
+#showWinnerPara{
+	font-family: 'Press Start 2P', sans-serif;
+}*/
+
+@media (max-width: 400px) and (orientation: portrait) {
+	h1{
+		font-size: 25px;
+		margin: 15px;
+	}
+	.instructions-container .instructions{
+		font-size: 13px;
+	}
 }
