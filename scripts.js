@@ -113,7 +113,7 @@ function playRound(play) {
 
   roundWinnerPara.classList.add("round-winner-p");
   roundWinnerPara.innerHTML = winner;
-  roundContainer.appendChild(roundWinnerPara);
+  scoreContainer.appendChild(roundWinnerPara);
 }
 
 function computerPlay() {

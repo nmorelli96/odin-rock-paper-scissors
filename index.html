@@ -1,94 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock, Paper, Scissors!</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./scripts.js" defer></script>
-    <link rel="icon" type="image/png" href="./resources/rock-paper-scissors.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <link href="./UPHEAVAL/stylesheet.css" rel="stylesheet" />
-    <script
-      src="https://kit.fontawesome.com/935b5672af.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
 
-  <body id="body">
-    <header class="header">
-      <h1>
-        Rock, Paper, Scissors !
-      </h1>
-    </header>
-    <div class="form">
-      <div class="instructions-container">
-        <p class="instructions">
-          You'll play against the robot. <br />
-          3 points are needed to win the game.
-        </p>
-        <p class="instructions">Good luck!</p>
-      </div>
-      <div class="submit-container">
-        <div class="choice-buttons">
-          <button class="choiceBtn" id="rockBtn" value="rock">
-            <i class="fa-solid fa-5x fa-hand-fist"></i>
-          </button>
-          <button class="choiceBtn" id="paperBtn" value="paper">
-            <i class="fa-solid fa-5x fa-hand"></i>
-          </button>
-          <button class="choiceBtn" id="scissorsBtn" value="scissors">
-            <i class="fa-solid fa-5x fa-hand-scissors"></i>
-          </button>
-        </div>
-        <div class="computer-play">
-          <i id="robot" class="fa-solid fa-5x fa-robot"></i>
-          <div class="false-btn">
-            <i id="computerIcon" class="fa-solid fa-5x fa-question"></i>
-          </div>
-        </div>
-      </div>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Rock, Paper, Scissors!</title>
+	<link rel="stylesheet" href="./style.css" />
+	<script src="./scripts.js" defer></script>
+	<link rel="icon" type="image/png" href="./resources/rock-paper-scissors.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+	<link href="./UPHEAVAL/stylesheet.css" rel="stylesheet" />
+	<script src="https://kit.fontawesome.com/935b5672af.js" crossorigin="anonymous"></script>
+</head>
 
-      <div class="results-container" id="results">
-        <div class="score-container" id="scores"></div>
-        <div class="round-container" id="rounds"></div>
-      </div>
-    </div>
-    <div class="counter-container">
-      <p class="counter" id="roundCounter"></p>
-      <p class="counter" id="playerScoreCounter"></p>
-      <p class="counter" id="computerScoreCounter"></p>
-    </div>
-
-    <footer>
-    <hr></hr>
-    <div id="footer-text">
-      <div id="disclaimer">
-        Based on the <a href="https://www.theodinproject.com/paths/foundations/courses/foundations" target="_blank">TOP</a> course -
-      </div>
-      <div id="contact">
-        <a href="https://github.com/nmorelli96" target="_blank">
-          nmorelli96 <i id="gitlogo" class="fa-brands fa-github"></i
-        ></a>
-      </div>
-    </div>
-    </footer>
-    <div class="inactive" id="overlay"></div>
-    <div class="inactive" id="showWinner">
-      <p class="showWinnerPara" id="showWinnerPara"></p>
-      <button class="replay-btn" id="replay-btn">Play Again</button>
+<body id="body">
+	<header class="header">
+		<h1>
+			Rock, Paper, Scissors !
+		</h1>
+	</header>
+	<div class="form">
+		<div class="instructions-container">
+			<p class="instructions">
+				You'll play against the robot. <br />
+				3 points are needed to win the game.
+			</p>
+			<p class="instructions">Good luck!</p>
 		</div>
-		<audio id="victory-s" src="resources/victory.mp3"></audio>
-		<audio id="defeat-s" src="resources/defeat.mp3"></audio>
-  </body>
+		<div class="submit-container">
+			<div class="choice-buttons">
+				<button class="choiceBtn" id="rockBtn" value="rock">
+					<i class="fa-solid fa-5x fa-hand-fist"></i>
+				</button>
+				<button class="choiceBtn" id="paperBtn" value="paper">
+					<i class="fa-solid fa-5x fa-hand"></i>
+				</button>
+				<button class="choiceBtn" id="scissorsBtn" value="scissors">
+					<i class="fa-solid fa-5x fa-hand-scissors"></i>
+				</button>
+			</div>
+			<div class="computer-play">
+				<i id="robot" class="fa-solid fa-5x fa-robot"></i>
+				<div class="false-btn">
+					<i id="computerIcon" class="fa-solid fa-5x fa-question"></i>
+				</div>
+			</div>
+		</div>
+
+		<div class="results-container" id="results">
+			<div class="score-container" id="scores"></div>
+			<div class="round-container" id="rounds"></div>
+		</div>
+	</div>
+	<div class="counter-container">
+		<p class="counter" id="roundCounter"></p>
+		<p class="counter" id="playerScoreCounter"></p>
+		<p class="counter" id="computerScoreCounter"></p>
+	</div>
+
+	<footer>
+		<hr>
+		</hr>
+		<div id="footer-text">
+			<div id="contact">
+				Based on the <a id="link" href="https://www.theodinproject.com/paths/foundations/courses/foundations"
+					target="_blank">TOP</a> course - <a id="link" href="https://github.com/nmorelli96" target="_blank">
+					nmorelli96 <i id="gitlogo" class="fa-brands fa-github"></i></a>
+			</div>
+		</div>
+	</footer>
+	<div class="inactive" id="overlay"></div>
+	<div class="inactive" id="showWinner">
+		<p class="showWinnerPara" id="showWinnerPara"></p>
+		<button class="replay-btn" id="replay-btn">Play Again</button>
+	</div>
+	<audio id="victory-s" src="resources/victory.mp3"></audio>
+	<audio id="defeat-s" src="resources/defeat.mp3"></audio>
+</body>
+
 </html>

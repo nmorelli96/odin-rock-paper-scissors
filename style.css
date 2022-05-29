@@ -45,7 +45,7 @@ h1 {
 	text-shadow: 2px 2px 2px rgba(247, 169, 0, 0.4);
 }
 
-h1 > i {
+h1>i {
 	color: rgb(255, 31, 15);
 	text-shadow: 1px 1px 1px rgba(175, 153, 52, 0.6);
 }
@@ -61,6 +61,7 @@ h1 > i {
 	letter-spacing: 0.5px;
 	text-shadow: 1px 1px 1px rgba(184, 158, 41, 0.75);
 	font-family: 'upheaval_tt_brkregular', 'Press Start 2P', sans-serif;
+	padding: auto 8px auto 8px;
 }
 
 .submit-container {
@@ -148,15 +149,15 @@ button {
 	min-width: 200px;
 }
 
-#rounds {
-	display: flex;
+/*#rounds {
+	display: none;
 	flex-flow: column nowrap;
 	padding: 10px;
 	gap: 10px;
 	text-align: left;
 	min-width: 200px;
 	margin-bottom: 10px;
-}
+}*/
 
 .showWinner {
 	z-index: 2;
@@ -171,7 +172,7 @@ button {
 	font-size: 1.2rem;
 }
 
-.showWinner > button {
+.showWinner>button {
 	font-size: 1.3rem;
 }
 
@@ -203,6 +204,8 @@ button {
 
 footer {
 	position: fixed;
+	display: flex;
+	flex-flow: column nowrap;
 	width: 100%;
 	bottom: 1%;
 	opacity: 0.8;
@@ -215,7 +218,7 @@ footer {
 	justify-content: center;
 	font-size: 1rem;
 	gap: 7px;
-	letter-spacing: 0.5px;
+	letter-spacing: 1px;
 }
 
 hr {
@@ -226,9 +229,10 @@ hr {
 }
 
 a {
+	display: inline-block;
 	text-decoration: none;
 	color: gold;
-	text-shadow: 0 0 4px var(--main-orange);
+	text-shadow: 0 0 3px var(--main-orange);
 }
 
 a:hover,
@@ -236,31 +240,475 @@ a:visited {
 	color: var(--main-orange);
 }
 
-#contact {
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: center;
-}
-
-@media (max-width: 400px) and (orientation: portrait) {
-	h1 {
-		font-size: 1.8rem;
-		margin-top: 15px;
-		margin-bottom: 15px;
-	}
-	.instructions-container .instructions {
-		font-size: 1.3rem;
-	}
+a:hover {
+	text-shadow: 0 0 7px gold;
 }
 
 @keyframes zoom-in-zoom-out {
 	0% {
 		transform: scale(1, 1);
 	}
+
 	50% {
 		transform: scale(1.2, 1.2);
 	}
+
 	100% {
 		transform: scale(1, 1);
+	}
+}
+
+
+/* /\/\/\/\/\/\/\/\/\/\ MEDIA QUERIES /\/\/\/\/\/\/\/\/\/\ */
+
+
+@media only screen and (max-width: 1930px) and (min-width: 1371px) and (orientation: landscape) {
+	h1 {
+		font-size: 3.5rem;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.instructions-container .instructions {
+		font-size: 1.8rem;
+		letter-spacing: normal;
+		margin-top: 5px;
+	}
+
+	button {
+		margin-top: 0px;
+		margin-bottom: 10px;
+	}
+
+	.choice-buttons {
+		margin-bottom: 30px;
+	}
+
+	.false-btn {
+		padding: 6px;
+		padding-top: 12px;
+		color: var(--main-orange);
+		text-shadow: 0 0 0.25rem rgb(255, 0, 0);
+	}
+
+	.submit-container {
+		transform: scale(1.3);
+		margin-top: 70px;
+		margin-bottom: 80px;
+	}
+
+	#results {
+		transform: scale(1.3);
+	}
+
+	.round-p {
+		padding: 4px;
+	}
+
+	.round-winner-p {
+		padding: 4px;
+	}
+
+	.showWinner {
+		padding: 25px;
+		font-size: 1.8rem;
+	}
+
+	.showWinner>button {
+		font-size: 1.8rem;
+	}
+
+	#footer-text {
+		font-size: 1.2rem;
+	}
+}
+
+@media only screen and (max-width: 1370px) and (min-width: 1026px) and (orientation: landscape) {
+	h1 {
+		font-size: 2.5rem;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.instructions-container .instructions {
+		font-size: 1.4rem;
+		letter-spacing: normal;
+		margin-top: 5px;
+	}
+
+	button {
+		margin-top: 0px;
+		margin-bottom: -10px;
+	}
+
+	.choice-buttons {
+		margin-bottom: 30px;
+	}
+
+	.false-btn {
+		padding: 6px;
+		padding-top: 12px;
+		color: var(--main-orange);
+		text-shadow: 0 0 0.25rem rgb(255, 0, 0);
+	}
+
+	.submit-container {
+		margin-top: 20px;
+		margin-bottom: -10px;
+
+	}
+
+	.round-p {
+		padding: 4px;
+	}
+
+	.round-winner-p {
+		padding: 4px;
+	}
+
+	.showWinner {
+		padding: 25px;
+		font-size: 1.5rem;
+	}
+
+	.showWinner>button {
+		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 1025px) and (min-width: 771px) and (orientation: portrait) {
+	h1 {
+		font-size: 4rem;
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+
+	.instructions-container .instructions {
+		font-size: 2.5rem;
+		letter-spacing: normal;
+		margin-top: 30px;
+	}
+
+	button {
+		margin-top: 0px;
+		margin-bottom: 20px;
+	}
+
+	.choice-buttons {
+		margin-bottom: 30px;
+	}
+
+	.false-btn {
+		padding: 6px;
+		padding-top: 12px;
+		color: var(--main-orange);
+		text-shadow: 0 0 0.25rem rgb(255, 0, 0);
+	}
+
+	.submit-container {
+		transform: scale(1.9);
+		margin-top: 200px;
+		margin-bottom: 220px;
+	}
+
+	#results {
+		transform: scale(2);
+	}
+
+	.round-p {
+		padding: 20px;
+	}
+
+	.round-winner-p {
+		padding: 20px;
+	}
+
+	.showWinner {
+		padding: 40px;
+		font-size: 2.3rem;
+	}
+
+	.showWinner>button {
+		font-size: 2.3rem;
+		min-height: 80px;
+	}
+
+	footer {
+		position: absolute;
+		width: 100%;
+		bottom: 1;
+	}
+
+	#footer-text {
+		font-size: 1.6rem;
+		letter-spacing: normal;
+	}
+}
+
+@media only screen and (max-width: 770px) and (min-width: 411px) and (orientation: portrait) {
+	h1 {
+		font-size: 3rem;
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+
+	.instructions-container .instructions {
+		font-size: 2rem;
+		letter-spacing: normal;
+		margin-top: 20px;
+	}
+
+	button {
+		margin-top: 0px;
+		margin-bottom: 10px;
+	}
+
+	.choice-buttons {
+		margin-bottom: 30px;
+	}
+
+	.false-btn {
+		padding: 6px;
+		padding-top: 12px;
+		color: var(--main-orange);
+		text-shadow: 0 0 0.25rem rgb(255, 0, 0);
+	}
+
+	.submit-container {
+		transform: scale(1.4);
+		margin-top: 120px;
+		margin-bottom: 100px;
+	}
+
+	#results {
+		transform: scale(1.4);
+	}
+
+	.round-p {
+		padding: 15px;
+	}
+
+	.round-winner-p {
+		padding: 15px;
+	}
+
+	.showWinner {
+		padding: 30px;
+		font-size: 2rem;
+	}
+
+	.showWinner>button {
+		font-size: 2rem;
+		min-height: 70px;
+	}
+
+	footer {
+		position: absolute;
+		width: 100%;
+		bottom: 1;
+	}
+
+	#footer-text {
+		font-size: 1.3rem;
+		letter-spacing: normal;
+	}
+}
+
+@media only screen and (max-width: 410px) and (min-width: 361px) and (orientation: portrait) {
+	h1 {
+		font-size: 1.8rem;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.instructions-container .instructions {
+		font-size: 1.4rem;
+		letter-spacing: normal;
+		margin-top: 10px;
+	}
+
+	button {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	.choice-buttons {
+		margin-bottom: 30px;
+	}
+
+	.false-btn {
+		padding: 6px;
+		padding-top: 12px;
+		color: var(--main-orange);
+		text-shadow: 0 0 0.25rem rgb(255, 0, 0);
+	}
+
+	.submit-container {
+		transform: scale(1);
+		margin-top: 35px;
+		margin-bottom: 20px;
+	}
+
+	#results {
+		transform: scale(1);
+	}
+
+	.round-p {
+		padding: 15px;
+	}
+
+	.round-winner-p {
+		padding: 15px;
+	}
+
+	.showWinner {
+		padding: 25px;
+		font-size: 1.5rem;
+	}
+
+	.showWinner>button {
+		font-size: 1.7rem;
+		min-height: 60px;
+	}
+
+	footer {
+		position: absolute;
+		width: 100%;
+		bottom: 1;
+	}
+
+	#footer-text {
+		font-size: 1rem;
+		letter-spacing: normal;
+	}
+}
+
+@media only screen and (max-width: 360px) and (min-width: 321px) and (orientation: portrait) {
+	h1 {
+		font-size: 1.6rem;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.instructions-container .instructions {
+		font-size: 1.2rem;
+		letter-spacing: normal;
+		margin-top: 10px;
+
+	}
+
+	button {
+		margin-top: 0px;
+		margin-bottom: 20px;
+	}
+
+	.choice-buttons {
+		margin-bottom: 0px;
+	}
+
+	.false-btn {
+		padding: 6px;
+		padding-top: 12px;
+		color: var(--main-orange);
+		text-shadow: 0 0 0.25rem rgb(255, 0, 0);
+	}
+
+	.submit-container {
+		transform: scale(0.9);
+		margin-top: 10px;
+		margin-bottom: -10px;
+	}
+
+	#results {
+		transform: scale(0.9);
+	}
+
+	.round-p {
+		padding: 10px;
+	}
+
+	.round-winner-p {
+		padding: 10px;
+	}
+
+	.showWinner {
+		padding: 15px;
+		font-size: 1.3rem;
+	}
+
+	.showWinner>button {
+		font-size: 1.5rem;
+		min-height: 60px;
+	}
+
+	footer {
+		position: absolute;
+		width: 100%;
+		bottom: 1;
+	}
+
+	#footer-text {
+		font-size: 0.8rem;
+		letter-spacing: normal;
+	}
+}
+
+@media only screen and (max-width: 320px) and (orientation: portrait) {
+	h1 {
+		font-size: 1.5rem;
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.instructions-container .instructions {
+		font-size: 1rem;
+		letter-spacing: normal;
+		margin-top: 0px;
+
+	}
+
+	button {
+		margin-top: 0px;
+		margin-bottom: 20px;
+	}
+
+	.choice-buttons {
+		margin-bottom: 0px;
+	}
+
+	.false-btn {
+		padding: 6px;
+		padding-top: 12px;
+		color: var(--main-orange);
+		text-shadow: 0 0 0.25rem rgb(255, 0, 0);
+	}
+
+	.submit-container {
+		transform: scale(0.8);
+		margin-top: -10px;
+		margin-bottom: -30px;
+	}
+
+	#results {
+		transform: scale(0.8);
+	}
+
+	.round-p {
+		padding: 10px;
+	}
+
+	.round-winner-p {
+		padding: 10px;
+	}
+
+	footer {
+		position: absolute;
+		width: 100%;
+		bottom: 1;
+	}
+
+	#footer-text {
+		font-size: 0.8rem;
+		letter-spacing: normal;
 	}
 }
