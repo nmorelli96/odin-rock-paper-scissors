@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock, Paper, Scissors!</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./mediaQueries.css" />
+  <script src="./scripts.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="./my.js"></script>
+  <link rel="icon" type="image/png" href="./resources/rock-paper-scissors.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link href="./UPHEAVAL/stylesheet.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/935b5672af.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+  <header class="header">
+    <h1>
+      Rock, Paper, Scissors !
+    </h1>
+    <div class="info-icon" id="info-icon"><i class="fa-regular fa-2x fa-circle-question"></i></i></div>
+  </header>
+  <div class="form">
+    <div class="instructions-container">
+      <p class="instructions">
+        Jugarás contra el robot. <br />
+        Se necesitan 3 puntos para ganar el juego.
+      </p>
+      <p class="instructions">Buena Suerte !</p>
+    </div>
+    <div class="submit-container">
+      <div class="choice-buttons">
+        <button data-key="49" class="choiceBtn" id="rockBtn" value="rock">
+          <i class="fa-solid fa-5x fa-hand-fist"></i>
+        </button>
+        <button data-key="50" class="choiceBtn" id="paperBtn" value="paper">
+          <i class="fa-solid fa-5x fa-hand"></i>
+        </button>
+        <button data-key="51" class="choiceBtn" id="scissorsBtn" value="scissors">
+          <i class="fa-solid fa-5x fa-hand-scissors"></i>
+        </button>
+      </div>
+      <div class="computer-play">
+        <i id="robot" class="fa-solid fa-5x fa-robot"></i>
+        <div class="false-btn">
+          <i id="computerIcon" class="fa-solid fa-5x fa-question"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-container" id="results">
+      <div class="score-container" id="scores"></div>
+      <div class="round-container" id="rounds"></div>
+    </div>
+  </div>
+
+  <div class="dropdown-container">
+    <select id="language-selector" name="language" onchange="langHandler(this.value)">
+      <option>&#127758</option>
+      <option value="EN">EN</option>
+      <option value="ES">ES</option>
+    </select>
+  </div>
+
+  <footer>
+    <hr>
+    </hr>
+    <div id="footer-text">
+      <div id="contact">
+        Basado en el curso de <a id="link" href="https://www.theodinproject.com/paths/foundations/courses/foundations"
+          target="_blank">TOP</a> - <a id="link" href="https://github.com/nmorelli96" target="_blank">
+          nmorelli96 <i id="gitlogo" class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="info" id="info">Puedes elegir P/P/T con las teclas '1', '2' y '3' de tu teclado. <br> <br>
+    Además, cuando finalice el juego podrás evitar clickear el botón "Jugar de nuevo" usando la tecla "Enter"..</div>
+
+  <div class="inactive" id="overlay"></div>
+  <div class="inactive" id="showWinner">
+    <p class="showWinnerPara" id="showWinnerPara"></p>
+    <button class="replay-btn" id="replay-btn">Play Again</button>
+  </div>
+  <audio id="tap-s" src="resources/errysn_klik.mp3"></audio>
+  <audio id="victory-s" src="resources/victory.mp3"></audio>
+  <audio id="defeat-s" src="resources/defeat.mp3"></audio>
+</body>
+
+</html>

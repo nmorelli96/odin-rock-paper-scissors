@@ -4,30 +4,32 @@ let playerScore = 0;
 let computerScore = 0;
 let rounds = 0;
 
-const winStr = "<span style='color:limegreen'>You Win !</span>";
-const loseStr = "<span style='color:crimson'>You Lose !</span>";
-const tieStr = "<span style='color:sandybrown'>It's a Tie !</span>";
+const gameWinStrEN = "You won the game! <br> Well done! <br> &#128526";
+const gameWinStrES = "Ganaste el juego! <br> Bien hecho! <br> &#128526";
+const gameLoseStrEN = "You lost the game &#128531 <br> Better luck next time!";
+const gameLoseStrES = "Perdiste el juego &#128531 <br> Suerte en el próximo!";
 
-const resultsContainer = document.querySelector("#results");
+const winStrEN = "<span style='color:limegreen'>You Win !</span>";
+const winStrES = "<span style='color:limegreen'>Ganaste !</span>";
+const loseStrEN = "<span style='color:crimson'>You Lose !</span>";
+const loseStrES = "<span style='color:crimson'>Perdiste !</span>";
+const tieStrEN = "<span style='color:sandybrown'>It's a Tie !</span>";
+const tieStrES = "<span style='color:sandybrown'>Empate !</span>";
+
+const playerStrEN = "<span style='color:rgb(255, 173, 65)'>Player </span>";
+const playerStrES = "<span style='color:rgb(255, 173, 65)'>Jugador </span>";
+const robotStr = "<span style='color:rgb(101, 196, 255)'> Robot</span>";
+
 const scoreContainer = document.querySelector("#scores");
-const roundContainer = document.querySelector("#rounds");
-const winnerContainer = document.querySelector("#winner");
 
 const roundPara = document.createElement("p");
 const scorePara = document.createElement("p");
-const playerChoicePara = document.createElement("p");
-const computerScorePara = document.createElement("p");
 const roundWinnerPara = document.createElement("p");
-
-const rockBtn = document.getElementById("rockBtn");
-const paperBtn = document.getElementById("paperBtn");
-const scissorsBtn = document.getElementById("scissorsBtn");
 
 const computerIcon = document.getElementById("computerIcon");
 
 const showWinner = document.getElementById("showWinner");
 const showWinnerPara = document.getElementById("showWinnerPara");
-const replay = document.getElementById("replay-btn");
 const overlay = document.getElementById("overlay");
 
 const restartGame = document.getElementById("replay-btn");
@@ -48,9 +50,11 @@ submitRock.addEventListener("click", (event) => {
   submitRock.classList.add("selected");
 });
 document.addEventListener("keydown", (event) => {
-  if (event.key == 1 && overlay.classList.contains('inactive')) {
+  if (event.key == 1 && overlay.classList.contains("inactive")) {
     //avoid to allow pressing keys with the game finished
-    if (event.repeat) { return }	//avoid key spamming
+    if (event.repeat) {
+      return;
+    } //avoid key spamming
     game("Rock");
     tapSound.currentTime = 0;
     tapSound.play();
@@ -72,8 +76,10 @@ submitPaper.addEventListener("click", (event) => {
   submitPaper.classList.add("selected");
 });
 document.addEventListener("keydown", (event) => {
-  if (event.key == 2 && overlay.classList.contains('inactive')) {
-    if (event.repeat) { return }
+  if (event.key == 2 && overlay.classList.contains("inactive")) {
+    if (event.repeat) {
+      return;
+    }
     game("Paper");
     tapSound.currentTime = 0;
     tapSound.play();
@@ -95,8 +101,10 @@ submitScissors.addEventListener("click", (event) => {
   submitScissors.classList.add("selected");
 });
 document.addEventListener("keydown", (event) => {
-  if (event.key == 3 && overlay.classList.contains('inactive')) {
-    if (event.repeat) { return }
+  if (event.key == 3 && overlay.classList.contains("inactive")) {
+    if (event.repeat) {
+      return;
+    }
     game("Scissors");
     tapSound.currentTime = 0;
     tapSound.play();
@@ -111,12 +119,11 @@ document.addEventListener("keydown", (event) => {
 restartGame.addEventListener("click", (event) => {
   restart();
 });
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter' && overlay.classList.contains('overlay')) {
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && overlay.classList.contains("overlay")) {
     restart();
   }
 });
-
 
 function restart() {
   rounds = 0;
@@ -124,7 +131,7 @@ function restart() {
   computerScore = 0;
   overlay.classList.replace("overlay", "inactive");
   showWinner.classList.replace("showWinner", "inactive");
-  location.reload()
+  location.reload();
 }
 
 function game(play) {
@@ -134,13 +141,26 @@ function game(play) {
     if (playerScore > computerScore) {
       showWinner.classList.replace("inactive", "showWinner");
       overlay.classList.replace("inactive", "overlay");
-      showWinnerPara.innerHTML = "You won the game! <br> Well done!";
+      switch (window.location.pathname) {
+        default:
+          showWinnerPara.innerHTML = gameWinStrEN;
+          break;
+        case "/index_ES.html":
+          showWinnerPara.innerHTML = gameWinStrES;
+          break;
+      }
       victorySound.play();
     } else {
       showWinner.classList.replace("inactive", "showWinner");
       overlay.classList.replace("inactive", "overlay");
-      showWinnerPara.innerHTML =
-        "You lost the game :( <br> Better luck next time";
+      switch (window.location.pathname) {
+        default:
+          showWinnerPara.innerHTML = gameLoseStrEN;
+          break;
+        case "/index_ES.html":
+          showWinnerPara.innerHTML = gameLoseStrES;
+          break;
+      }
       defeatSound.play();
     }
   }
@@ -150,22 +170,37 @@ function playRound(play) {
   let computerSelection = computerPlay();
   playerSelection = play;
   let winner = checkWinner(playerSelection, computerSelection);
-  if (winner === winStr) {
+  if (winner === winStrEN || winner === winStrES) {
     playerScore++;
     rounds++;
-  } else if (winner === loseStr) {
+  } else if (winner === loseStrEN || winner === loseStrES) {
     computerScore++;
     rounds++;
   } else {
     rounds++;
   }
   roundPara.classList.add("round-p");
-  roundPara.innerHTML = "Round: " + rounds;
+  switch (window.location.pathname) {
+    default:
+      roundPara.innerHTML = "Round: " + rounds;
+      break;
+    case "/index_ES.html":
+      roundPara.innerHTML = "Ronda: " + rounds;
+      break;
+  }
   scoreContainer.appendChild(roundPara);
 
   scorePara.classList.add("score-p");
-  scorePara.innerHTML =
-    "<span style='color:rgb(255, 173, 65)'>Player </span>" + playerScore + " - " + computerScore + "<span style='color:rgb(101, 196, 255)'> Robot</span>";
+  switch (window.location.pathname) {
+    default:
+      scorePara.innerHTML =
+        playerStrEN + playerScore + " - " + computerScore + robotStr;
+      break;
+    case "/index_ES.html":
+      scorePara.innerHTML =
+        playerStrES + playerScore + " - " + computerScore + robotStr;
+      break;
+  }
   scoreContainer.appendChild(scorePara);
 
   roundWinnerPara.classList.add("round-winner-p");
@@ -212,15 +247,37 @@ function checkWinner(playerSelection, computerSelection) {
     (playerSelection === "Rock" && computerSelection === "Scissors") ||
     (playerSelection === "Scissors" && computerSelection === "Paper")
   ) {
-    return winStr;
+    switch (window.location.pathname) {
+      default:
+        return winStrEN;
+      case "/index_ES.html":
+        return winStrES;
+    }
   } else if (
     (playerSelection === "Paper" && computerSelection === "Scissors") ||
     (playerSelection === "Rock" && computerSelection === "Paper") ||
     (playerSelection === "Scissors" && computerSelection === "Rock")
   ) {
-    return loseStr;
+    switch (window.location.pathname) {
+      default:
+        return loseStrEN;
+      case "/index_ES.html":
+        return loseStrES;
+    }
   } else {
-    return tieStr;
+    switch (window.location.pathname) {
+      default:
+        return tieStrEN;
+      case "/index_ES.html":
+        return tieStrES;
+    }
   }
 }
 
+function langHandler(value) {
+  if (value === "EN") {
+    window.location.assign(`index.html`);
+  } else if (value === "ES") {
+    window.location.assign(`index_${value}.html`);
+  }
+}
