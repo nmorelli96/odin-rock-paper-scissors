@@ -36,6 +36,18 @@ header {
 	background-color: var(--headerbg);
 }
 
+#info-icon {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	color: var(--main-orange);
+	text-shadow: 0px 0px 5px rgba(247, 169, 0, 0.4);
+}
+
+#info-icon:hover {
+	text-shadow: 0px 0px 5px gold;
+}
+
 h1 {
 	color: var(--main-orange);
 	font-family: 'upheaval_tt_brkregular', 'Press Start 2P', 'Courier New',
@@ -159,39 +171,6 @@ button {
 	margin-bottom: 10px;
 }*/
 
-.showWinner {
-	z-index: 2;
-	box-shadow: 8px 8px 6px black;
-	background-color: rgb(30, 30, 30);
-	position: absolute;
-	top: 20vh;
-	display: flex;
-	flex-direction: column;
-	padding: 15px;
-	border-radius: 15px;
-	font-size: 1.2rem;
-}
-
-.showWinner>button {
-	font-size: 1.3rem;
-}
-
-.overlay {
-	/*display: none;*/
-	display: block;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: black;
-	opacity: 0.5;
-	z-index: 1;
-}
-
-.inactive {
-	display: none;
-}
 
 .round-p,
 .score-p,
@@ -244,6 +223,57 @@ a:hover {
 	text-shadow: 0 0 7px gold;
 }
 
+.showWinner {
+	z-index: 2;
+	box-shadow: 8px 8px 6px black;
+	background-color: rgb(30, 30, 30);
+	position: absolute;
+	top: 20vh;
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	border-radius: 15px;
+	font-size: 1.2rem;
+}
+
+.showWinner>button {
+	font-size: 1.3rem;
+}
+
+.overlay {
+	/*display: none;*/
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 1;
+}
+
+.inactive {
+	display: none;
+}
+
+#info {
+	opacity: 0;
+	display: block;
+	position: fixed;
+	top: 7%;
+	right: 5%;
+	z-index: 1;
+	max-width: 200px;
+	text-align: justify;
+	font-family: Nunito;
+	background-color: var(--bg-gray);
+	border-radius: 10px;
+	border: outset 2px var(--main-orange);
+	padding: 15px;
+	box-shadow: 12px 12px 15px black;
+}
+
 @keyframes zoom-in-zoom-out {
 	0% {
 		transform: scale(1, 1);
@@ -258,9 +288,167 @@ a:hover {
 	}
 }
 
-
 /* /\/\/\/\/\/\/\/\/\/\ MEDIA QUERIES /\/\/\/\/\/\/\/\/\/\ */
 
+@media only screen and (max-width: 3850px) and (min-width: 2571px) and (orientation: landscape) {
+	h1 {
+		font-size: 8rem;
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+
+	.instructions-container .instructions {
+		font-size: 4.5rem;
+		letter-spacing: normal;
+		margin-top: 30px;
+	}
+
+	button {
+		margin-top: 0px;
+		margin-bottom: 10px;
+	}
+
+	.choice-buttons {
+		margin-bottom: 30px;
+	}
+
+	.false-btn {
+		padding: 6px;
+		padding-top: 12px;
+		color: var(--main-orange);
+		text-shadow: 0 0 0.25rem rgb(255, 0, 0);
+	}
+
+	.submit-container {
+		transform: scale(3);
+		margin-top: 350px;
+		margin-bottom: 450px;
+	}
+
+	#results {
+		transform: scale(3);
+	}
+
+	.round-p {
+		padding: 4px;
+	}
+
+	.round-winner-p {
+		padding: 4px;
+	}
+
+	.showWinner {
+		padding: 35px;
+		font-size: 4rem;
+	}
+
+	.showWinner>button {
+		font-size: 4rem;
+		min-height: 150px;
+	}
+
+	hr {
+		border: solid 2px;
+		box-shadow: 0 0 5px var(--main-orange);
+	}
+
+	#footer-text {
+		font-size: 3rem;
+	}
+
+	#info-icon {
+		top: 60px;
+		right: 60px;
+		transform: scale(1.8);
+		text-shadow: 0px 0px 5px rgba(247, 169, 0, 0.4);
+	}
+
+	#info {
+		font-size: 2rem;
+		min-width: 400px;
+		border: outset 3px var(--main-orange);
+	}
+}
+
+@media only screen and (max-width: 2570px) and (min-width: 1931px) and (orientation: landscape) {
+	h1 {
+		font-size: 5.5rem;
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.instructions-container .instructions {
+		font-size: 3rem;
+		letter-spacing: normal;
+		margin-top: 30px;
+	}
+
+	button {
+		margin-top: 0px;
+		margin-bottom: 10px;
+	}
+
+	.choice-buttons {
+		margin-bottom: 30px;
+	}
+
+	.false-btn {
+		padding: 6px;
+		padding-top: 12px;
+		color: var(--main-orange);
+		text-shadow: 0 0 0.25rem rgb(255, 0, 0);
+	}
+
+	.submit-container {
+		transform: scale(1.7);
+		margin-top: 140px;
+		margin-bottom: 230px;
+	}
+
+	#results {
+		transform: scale(1.9);
+	}
+
+	.round-p {
+		padding: 4px;
+	}
+
+	.round-winner-p {
+		padding: 4px;
+	}
+
+	.showWinner {
+		padding: 35px;
+		font-size: 3rem;
+	}
+
+	.showWinner>button {
+		font-size: 3rem;
+		min-height: 100px;
+	}
+
+	hr {
+		border: solid 2px;
+		box-shadow: 0 0 5px var(--main-orange);
+	}
+
+	#footer-text {
+		font-size: 2rem;
+	}
+
+	#info-icon {
+		top: 60px;
+		right: 60px;
+		transform: scale(1.8);
+		text-shadow: 0px 0px 5px rgba(247, 169, 0, 0.4);
+	}
+
+	#info {
+		font-size: 2rem;
+		min-width: 400px;
+		border: outset 3px var(--main-orange);
+	}
+}
 
 @media only screen and (max-width: 1930px) and (min-width: 1371px) and (orientation: landscape) {
 	h1 {
@@ -320,6 +508,18 @@ a:hover {
 
 	#footer-text {
 		font-size: 1.2rem;
+	}
+
+	#info-icon {
+		top: 26px;
+		right: 30px;
+		transform: scale(1.2);
+		text-shadow: 0px 0px 5px rgba(247, 169, 0, 0.4);
+	}
+
+	#info {
+		font-size: 1.2rem;
+		min-width: 250px;
 	}
 }
 
@@ -443,6 +643,10 @@ a:hover {
 		font-size: 1.6rem;
 		letter-spacing: normal;
 	}
+
+	#info-icon {
+		display: none
+	}
 }
 
 @media only screen and (max-width: 770px) and (min-width: 411px) and (orientation: portrait) {
@@ -512,6 +716,10 @@ a:hover {
 		font-size: 1.3rem;
 		letter-spacing: normal;
 	}
+
+	#info-icon {
+		display: none
+	}
 }
 
 @media only screen and (max-width: 410px) and (min-width: 361px) and (orientation: portrait) {
@@ -580,6 +788,10 @@ a:hover {
 	#footer-text {
 		font-size: 1rem;
 		letter-spacing: normal;
+	}
+
+	#info-icon {
+		display: none
 	}
 }
 
@@ -651,6 +863,10 @@ a:hover {
 		font-size: 0.8rem;
 		letter-spacing: normal;
 	}
+
+	#info-icon {
+		display: none
+	}
 }
 
 @media only screen and (max-width: 320px) and (orientation: portrait) {
@@ -710,5 +926,9 @@ a:hover {
 	#footer-text {
 		font-size: 0.8rem;
 		letter-spacing: normal;
+	}
+
+	#info-icon {
+		display: none
 	}
 }

@@ -31,35 +31,92 @@ const replay = document.getElementById("replay-btn");
 const overlay = document.getElementById("overlay");
 
 const restartGame = document.getElementById("replay-btn");
-restartGame.addEventListener("click", (event) => {
-  restart();
-});
 
+const tapSound = document.getElementById("tap-s");
 const victorySound = document.getElementById("victory-s");
 const defeatSound = document.getElementById("defeat-s");
+
+//rock inputs
 
 let submitRock = document.getElementsByClassName("choiceBtn")[0];
 submitRock.addEventListener("click", (event) => {
   game("Rock");
+  tapSound.currentTime = 0;
+  tapSound.play();
   submitScissors.classList.remove("selected");
   submitPaper.classList.remove("selected");
   submitRock.classList.add("selected");
 });
+document.addEventListener("keydown", (event) => {
+  if (event.key == 1 && overlay.classList.contains('inactive')) {
+    //avoid to allow pressing keys with the game finished
+    if (event.repeat) { return }	//avoid key spamming
+    game("Rock");
+    tapSound.currentTime = 0;
+    tapSound.play();
+    submitScissors.classList.remove("selected");
+    submitPaper.classList.remove("selected");
+    submitRock.classList.add("selected");
+  }
+});
+
+//paper inputs
+
 let submitPaper = document.getElementsByClassName("choiceBtn")[1];
 submitPaper.addEventListener("click", (event) => {
   game("Paper");
+  tapSound.currentTime = 0;
+  tapSound.play();
   submitRock.classList.remove("selected");
   submitScissors.classList.remove("selected");
   submitPaper.classList.add("selected");
 });
+document.addEventListener("keydown", (event) => {
+  if (event.key == 2 && overlay.classList.contains('inactive')) {
+    if (event.repeat) { return }
+    game("Paper");
+    tapSound.currentTime = 0;
+    tapSound.play();
+    submitRock.classList.remove("selected");
+    submitScissors.classList.remove("selected");
+    submitPaper.classList.add("selected");
+  }
+});
+
+//scissors inputs
+
 let submitScissors = document.getElementsByClassName("choiceBtn")[2];
 submitScissors.addEventListener("click", (event) => {
   game("Scissors");
+  tapSound.currentTime = 0;
+  tapSound.play();
   submitRock.classList.remove("selected");
   submitPaper.classList.remove("selected");
   submitScissors.classList.add("selected");
 });
-// execute game function when clicking an option
+document.addEventListener("keydown", (event) => {
+  if (event.key == 3 && overlay.classList.contains('inactive')) {
+    if (event.repeat) { return }
+    game("Scissors");
+    tapSound.currentTime = 0;
+    tapSound.play();
+    submitRock.classList.remove("selected");
+    submitPaper.classList.remove("selected");
+    submitScissors.classList.add("selected");
+  }
+});
+
+//'play again' inputs
+
+restartGame.addEventListener("click", (event) => {
+  restart();
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && overlay.classList.contains('overlay')) {
+    restart();
+  }
+});
+
 
 function restart() {
   rounds = 0;
@@ -67,7 +124,7 @@ function restart() {
   computerScore = 0;
   overlay.classList.replace("overlay", "inactive");
   showWinner.classList.replace("showWinner", "inactive");
-	location.reload()
+  location.reload()
 }
 
 function game(play) {
@@ -78,13 +135,13 @@ function game(play) {
       showWinner.classList.replace("inactive", "showWinner");
       overlay.classList.replace("inactive", "overlay");
       showWinnerPara.innerHTML = "You won the game! <br> Well done!";
-			victorySound.play();
+      victorySound.play();
     } else {
       showWinner.classList.replace("inactive", "showWinner");
       overlay.classList.replace("inactive", "overlay");
       showWinnerPara.innerHTML =
         "You lost the game :( <br> Better luck next time";
-			defeatSound.play();
+      defeatSound.play();
     }
   }
 }
@@ -108,7 +165,7 @@ function playRound(play) {
 
   scorePara.classList.add("score-p");
   scorePara.innerHTML =
-	"<span style='color:rgb(255, 173, 65)'>Player </span>"+ playerScore + " - " + computerScore + "<span style='color:rgb(101, 196, 255)'> Robot</span>";
+    "<span style='color:rgb(255, 173, 65)'>Player </span>" + playerScore + " - " + computerScore + "<span style='color:rgb(101, 196, 255)'> Robot</span>";
   scoreContainer.appendChild(scorePara);
 
   roundWinnerPara.classList.add("round-winner-p");
@@ -166,3 +223,4 @@ function checkWinner(playerSelection, computerSelection) {
     return tieStr;
   }
 }
+
