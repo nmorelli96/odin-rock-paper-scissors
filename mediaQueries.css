@@ -49,7 +49,6 @@
     top: 90px;
     right: 80px;
     transform: scale(2.5);
-    text-shadow: 0px 0px 5px rgba(247, 169, 0, 0.4);
   }
 
   #info {
@@ -118,7 +117,6 @@
     top: 60px;
     right: 60px;
     transform: scale(1.8);
-    text-shadow: 0px 0px 5px rgba(247, 169, 0, 0.4);
   }
 
   #info {
@@ -181,7 +179,6 @@
     top: 26px;
     right: 30px;
     transform: scale(1.2);
-    text-shadow: 0px 0px 5px rgba(247, 169, 0, 0.4);
   }
 
   #info {
@@ -232,6 +229,7 @@
 
   #info {
     display: block;
+    min-width: 220px;
   }
 
   .dropdown-container {

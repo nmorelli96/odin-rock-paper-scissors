@@ -145,7 +145,8 @@ function game(play) {
         default:
           showWinnerPara.innerHTML = gameWinStrEN;
           break;
-        case "/index_ES.html":
+        //this location.pathname refers to the github page pathname
+        case "/odin-rock-paper-scissors/index_ES.html":
           showWinnerPara.innerHTML = gameWinStrES;
           break;
       }
@@ -157,7 +158,7 @@ function game(play) {
         default:
           showWinnerPara.innerHTML = gameLoseStrEN;
           break;
-        case "/index_ES.html":
+        case "/odin-rock-paper-scissors/index_ES.html":
           showWinnerPara.innerHTML = gameLoseStrES;
           break;
       }
@@ -184,7 +185,7 @@ function playRound(play) {
     default:
       roundPara.innerHTML = "Round: " + rounds;
       break;
-    case "/index_ES.html":
+    case "/odin-rock-paper-scissors/index_ES.html":
       roundPara.innerHTML = "Ronda: " + rounds;
       break;
   }
@@ -196,7 +197,7 @@ function playRound(play) {
       scorePara.innerHTML =
         playerStrEN + playerScore + " - " + computerScore + robotStr;
       break;
-    case "/index_ES.html":
+    case "/odin-rock-paper-scissors/index_ES.html":
       scorePara.innerHTML =
         playerStrES + playerScore + " - " + computerScore + robotStr;
       break;
@@ -250,7 +251,7 @@ function checkWinner(playerSelection, computerSelection) {
     switch (window.location.pathname) {
       default:
         return winStrEN;
-      case "/index_ES.html":
+      case "/odin-rock-paper-scissors/index_ES.html":
         return winStrES;
     }
   } else if (
@@ -261,14 +262,14 @@ function checkWinner(playerSelection, computerSelection) {
     switch (window.location.pathname) {
       default:
         return loseStrEN;
-      case "/index_ES.html":
+      case "/odin-rock-paper-scissors/index_ES.html":
         return loseStrES;
     }
   } else {
     switch (window.location.pathname) {
       default:
         return tieStrEN;
-      case "/index_ES.html":
+      case "/odin-rock-paper-scissors/index_ES.html":
         return tieStrES;
     }
   }
