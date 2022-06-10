@@ -8,13 +8,16 @@
 
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	line-height: 100%;
 }
 
 html {
 	font-family: "upheaval_tt_brkregular", "Press Start 2P", "Courier New",
 		Courier, monospace;
 	color: var(--base-text);
-	font-weight: 500;
+	font-weight: normal;
 	user-select: none;
 	min-height: 100vh;
 }
@@ -35,6 +38,9 @@ header {
 	height: auto;
 	margin-bottom: 12px;
 	background-color: var(--headerbg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #info-icon {
@@ -54,6 +60,11 @@ h1 {
 	font-family: "upheaval_tt_brkregular", "Press Start 2P", "Courier New",
 		Courier, monospace;
 	font-size: 2.5rem;
+	font-weight: normal !important;
+	margin-block-start: 0em;
+  margin-block-end: 0em;
+	margin-inline-start: 0px;
+  margin-inline-end: 0px;
 	margin: 15px;
 	text-shadow: 2px 2px 2px rgba(247, 169, 0, 0.4);
 }
@@ -63,9 +74,10 @@ h1>i {
 	text-shadow: 1px 1px 1px rgba(175, 153, 52, 0.6);
 }
 
+
 .instructions-container {
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: column wrap;
 }
 
 .instructions-container .instructions {
@@ -104,10 +116,13 @@ h1>i {
 }
 
 button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-family: "upheaval_tt_brkregular", "Courier New", Courier, monospace;
-	font-size: 1rem;
 	margin: 5px;
 	margin-top: 0px;
+	font-size: 1rem;
 	color: var(--skin);
 	background-color: rgb(36, 36, 36);
 	border-radius: 10px;
@@ -129,11 +144,13 @@ button {
 }
 
 .false-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	border: 2px outset lightgrey;
 	border-radius: 10px;
 	margin-left: 15px;
 	padding: 6px;
-	padding-top: 12px;
 	width: 110px;
 	height: 110px;
 	color: var(--main-orange);
@@ -226,19 +243,16 @@ hr {
 	margin-bottom: 2px;
 }
 
-a {
+a,
+a:visited {
 	display: inline-block;
 	text-decoration: none;
 	color: gold;
-	text-shadow: 0 0 3px var(--main-orange);
-}
-
-a:hover,
-a:visited {
-	color: var(--main-orange);
+	text-shadow: 0 0 5px var(--main-orange);
 }
 
 a:hover {
+	color: var(--main-orange);
 	text-shadow: 0 0 7px gold;
 }
 
@@ -251,11 +265,13 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 	padding: 15px;
+	padding-bottom: 0px;
 	border-radius: 15px;
 	font-size: 1.2rem;
 }
 
 .showWinner>button {
+	margin-top: 15px;
 	font-size: 1.3rem;
 }
 
@@ -291,6 +307,10 @@ a:hover {
 	border: outset 2px var(--main-orange);
 	padding: 15px;
 	box-shadow: 12px 12px 15px black;
+}
+
+#info > p {
+	line-height: 22px;
 }
 
 @keyframes zoom-in-zoom-out {

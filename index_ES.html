@@ -30,28 +30,26 @@
   </header>
   <div class="form">
     <div class="instructions-container">
-      <p class="instructions">
-        Jugarás contra el robot. <br />
-        Se necesitan 3 puntos para ganar el juego.
-      </p>
+      <p class="instructions">Jugarás contra el robot. </p>
+      <p class="instructions">Se necesitan 3 puntos para ganar el juego.</p>
       <p class="instructions">Buena Suerte !</p>
     </div>
     <div class="submit-container">
       <div class="choice-buttons">
         <button data-key="49" class="choiceBtn" id="rockBtn" value="rock">
-          <i class="fa-solid fa-5x fa-hand-fist"></i>
+          <i class="fa-solid fa-5x fa-fw fa-hand-fist"></i>
         </button>
         <button data-key="50" class="choiceBtn" id="paperBtn" value="paper">
-          <i class="fa-solid fa-5x fa-hand"></i>
+          <i class="fa-solid fa-5x fa-fw fa-hand"></i>
         </button>
         <button data-key="51" class="choiceBtn" id="scissorsBtn" value="scissors">
-          <i class="fa-solid fa-5x fa-hand-scissors"></i>
+          <i class="fa-solid fa-5x fa-fw fa-hand-scissors"></i>
         </button>
       </div>
       <div class="computer-play">
         <i id="robot" class="fa-solid fa-5x fa-robot"></i>
         <div class="false-btn">
-          <i id="computerIcon" class="fa-solid fa-5x fa-question"></i>
+          <i id="computerIcon" class="fa-solid fa-5x fa-fw fa-question"></i>
         </div>
       </div>
     </div>
@@ -82,13 +80,15 @@
     </div>
   </footer>
 
-  <div class="info" id="info">Puedes elegir P/P/T con las teclas '1', '2' y '3' del teclado. <br> <br>
-    Además, cuando finalice el juego podrás evitar clickear el botón "Jugar de nuevo" usando la tecla "Enter".</div>
+  <div class="info" id="info">
+    <p>Puedes elegir P/P/T con las teclas '1', '2' y '3' del teclado.</p> <br> <br>
+    <p>Además, cuando finalice el juego podrás evitar clickear el botón "Nuevo Juego" usando la tecla "Enter".</p>
+  </div>
 
   <div class="inactive" id="overlay"></div>
   <div class="inactive" id="showWinner">
     <p class="showWinnerPara" id="showWinnerPara"></p>
-    <button class="replay-btn" id="replay-btn">Play Again</button>
+    <button class="replay-btn" id="replay-btn">Nuevo juego</button>
   </div>
   <audio id="tap-s" src="resources/errysn_klik.mp3"></audio>
   <audio id="victory-s" src="resources/victory.mp3"></audio>

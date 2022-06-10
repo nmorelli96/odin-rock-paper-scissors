@@ -141,12 +141,11 @@ function game(play) {
     if (playerScore > computerScore) {
       showWinner.classList.replace("inactive", "showWinner");
       overlay.classList.replace("inactive", "overlay");
-      switch (window.location.pathname) {
+      switch (true) {
         default:
           showWinnerPara.innerHTML = gameWinStrEN;
           break;
-        //this location.pathname refers to the github page pathname
-        case "/odin-rock-paper-scissors/index_ES.html":
+        case window.location.pathname.match(/\/index_ES/g) != null:
           showWinnerPara.innerHTML = gameWinStrES;
           break;
       }
@@ -154,11 +153,11 @@ function game(play) {
     } else {
       showWinner.classList.replace("inactive", "showWinner");
       overlay.classList.replace("inactive", "overlay");
-      switch (window.location.pathname) {
+      switch (true) {
         default:
           showWinnerPara.innerHTML = gameLoseStrEN;
           break;
-        case "/odin-rock-paper-scissors/index_ES.html":
+        case window.location.pathname.match(/\/index_ES/g) != null:
           showWinnerPara.innerHTML = gameLoseStrES;
           break;
       }
@@ -181,23 +180,23 @@ function playRound(play) {
     rounds++;
   }
   roundPara.classList.add("round-p");
-  switch (window.location.pathname) {
+  switch (true) {
     default:
       roundPara.innerHTML = "Round: " + rounds;
       break;
-    case "/odin-rock-paper-scissors/index_ES.html":
+    case window.location.pathname.match(/\/index_ES/g) != null:
       roundPara.innerHTML = "Ronda: " + rounds;
       break;
   }
   scoreContainer.appendChild(roundPara);
 
   scorePara.classList.add("score-p");
-  switch (window.location.pathname) {
+  switch (true) {
     default:
       scorePara.innerHTML =
         playerStrEN + playerScore + " - " + computerScore + robotStr;
       break;
-    case "/odin-rock-paper-scissors/index_ES.html":
+    case window.location.pathname.match(/\/index_ES/g) != null:
       scorePara.innerHTML =
         playerStrES + playerScore + " - " + computerScore + robotStr;
       break;
@@ -248,10 +247,10 @@ function checkWinner(playerSelection, computerSelection) {
     (playerSelection === "Rock" && computerSelection === "Scissors") ||
     (playerSelection === "Scissors" && computerSelection === "Paper")
   ) {
-    switch (window.location.pathname) {
+    switch (true) {
       default:
         return winStrEN;
-      case "/odin-rock-paper-scissors/index_ES.html":
+      case window.location.pathname.match(/\/index_ES/g) != null:
         return winStrES;
     }
   } else if (
@@ -259,17 +258,17 @@ function checkWinner(playerSelection, computerSelection) {
     (playerSelection === "Rock" && computerSelection === "Paper") ||
     (playerSelection === "Scissors" && computerSelection === "Rock")
   ) {
-    switch (window.location.pathname) {
+    switch (true) {
       default:
         return loseStrEN;
-      case "/odin-rock-paper-scissors/index_ES.html":
+      case window.location.pathname.match(/\/index_ES/g) != null:
         return loseStrES;
     }
   } else {
-    switch (window.location.pathname) {
+    switch (true) {
       default:
         return tieStrEN;
-      case "/odin-rock-paper-scissors/index_ES.html":
+      case window.location.pathname.match(/\/index_ES/g) != null:
         return tieStrES;
     }
   }

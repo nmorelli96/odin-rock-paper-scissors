@@ -36,6 +36,10 @@
     min-height: 150px;
   }
 
+  #showWinnerPara {
+    line-height: 90px;
+  }
+
   hr {
     border: solid 2px;
     box-shadow: 0 0 5px var(--main-orange);
@@ -46,7 +50,7 @@
   }
 
   #info-icon {
-    top: 90px;
+    top: 75px;
     right: 80px;
     transform: scale(2.5);
   }
@@ -56,6 +60,10 @@
     font-size: 2rem;
     min-width: 400px;
     border: outset 3px var(--main-orange);
+  }
+
+  #info > p {
+    line-height: 40px;
   }
 
   .dropdown-container {
@@ -104,6 +112,10 @@
     min-height: 100px;
   }
 
+  #showWinnerPara {
+    line-height: 60px;
+  }
+
   hr {
     border: solid 2px;
     box-shadow: 0 0 5px var(--main-orange);
@@ -114,7 +126,7 @@
   }
 
   #info-icon {
-    top: 60px;
+    top: 50px;
     right: 60px;
     transform: scale(1.8);
   }
@@ -124,6 +136,10 @@
     font-size: 2rem;
     min-width: 400px;
     border: outset 3px var(--main-orange);
+  }
+
+  #info > p {
+    line-height: 38px;
   }
 
   .dropdown-container {
@@ -139,8 +155,8 @@
 @media only screen and (max-width: 1930px) and (min-width: 1371px) and (orientation: landscape) {
   h1 {
     font-size: 3.5rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .instructions-container .instructions {
@@ -164,11 +180,16 @@
 
   .showWinner {
     padding: 25px;
+    padding-bottom: 10px;
     font-size: 1.8rem;
   }
 
   .showWinner>button {
     font-size: 1.8rem;
+  }
+  
+  #showWinnerPara {
+    line-height: 35px;
   }
 
   #footer-text {
@@ -200,8 +221,9 @@
 @media only screen and (max-width: 1370px) and (min-width: 1026px) and (orientation: landscape) {
   h1 {
     font-size: 2.5rem;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 10px;
+    min-height: 48px;
   }
 
   .instructions-container .instructions {
@@ -225,6 +247,10 @@
 
   .showWinner>button {
     font-size: 1.5rem;
+  }
+
+  #showWinnerPara {
+    line-height: 30px;
   }
 
   #info {
@@ -275,12 +301,17 @@
 
   .showWinner {
     padding: 40px;
+    padding-bottom: 15px;
     font-size: 2.3rem;
   }
 
   .showWinner>button {
     font-size: 2.3rem;
     min-height: 80px;
+  }
+
+  #showWinnerPara {
+    line-height: 45px;
   }
 
   footer {
@@ -341,12 +372,17 @@
 
   .showWinner {
     padding: 30px;
+    padding-bottom: 10px;
     font-size: 2rem;
   }
 
   .showWinner>button {
     font-size: 2rem;
     min-height: 70px;
+  }
+
+  #showWinnerPara {
+    line-height: 38px;
   }
 
   footer {
@@ -415,6 +451,10 @@
     min-height: 60px;
   }
 
+  #showWinnerPara {
+    line-height: 32px;
+  }
+
   footer {
     position: absolute;
     width: 100%;
@@ -477,12 +517,17 @@
 
   .showWinner {
     padding: 15px;
+    padding-bottom: 0px;
     font-size: 1.3rem;
   }
 
   .showWinner>button {
     font-size: 1.5rem;
     min-height: 60px;
+  }
+
+  #showWinnerPara {
+    line-height: 28px;
   }
 
   footer {
@@ -543,6 +588,10 @@
   .round-p,
   .round-winner-p {
     padding: 10px;
+  }
+
+  #showWinnerPara {
+    line-height: 28px;
   }
 
   footer {
